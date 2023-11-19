@@ -8,8 +8,8 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_DB: Book_Server
-      POSTGRES_USER: fahim
+      POSTGRES_DB: <Database_Name>
+      POSTGRES_USER: <user_name>
       POSTGRES_PASSWORD: 50569
     ports:
       - "5432:5432"
@@ -22,7 +22,7 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgresql://fahim:50569@localhost/Book_Server
+      DATABASE_URL: postgresql://<user>:<password>@localhost/<Database_Name>
     ports:
       - "80:80"
     networks:
